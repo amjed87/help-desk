@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('/fonts/Cairo/Cairo-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('/fonts/Cairo/Cairo-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('/fonts/Cairo/Cairo-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  @apply py-20;
+}
+
+.slick-dots {
+  color: #1A21BC;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #1A21BC !important;
+}
+
+.slick-dots li button:before {
+  font-size: 11px !important;
+}
