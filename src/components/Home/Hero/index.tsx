@@ -40,7 +40,7 @@ const Hero = () => {
 
                     </div>
                     <div className='col-span-6 flex justify-center items-center h-full py-16'>  
-                        <Image src={`${getImagePrefix()}images/banner/moi.png`} alt="nothing" width={400} height={400} />
+                        <Image src={`${getImagePrefix()}images/banner/moi-2.png`} alt="nothing" width={400} height={400} />
                     </div>
                 </div>
 

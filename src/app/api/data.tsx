@@ -52,19 +52,64 @@ export const courseData: {
       
     },
     {
-      heading:'صيانة الحاسبات',
+      heading:' صيانة الحاسبات وملحقاتها',
       name: "خدمة مقدمة من قسم صيانة الحاسبات ",
       imgSrc: '/images/courses/coursetwo.png',
 
     },
     {
-      heading: 'هندسة الاجراءات',
+      heading: 'خدمة شهادات التشفير SSL',
       name: "خدمة مقدمة من قسم الحكومة الالكترونية ",
       imgSrc: '/images/courses/coursethree.png',
 
     },
     {
-      heading: 'تخصيص اسماء النطاقات',
+      heading: 'تخصيص اسماء نطاقات رئيسية وفرعية ',
+      name: "خدمة مقدمة من قسم لحكومة الالكترونية ",
+      imgSrc: '/images/courses/courseone.png',
+
+    },
+    {
+      heading: 'بناء الانظمة والبرامج ',
+      name: "خدمة مقدمة من قسم النظم المعلوماتية ",
+      imgSrc: '/images/courses/coursetwo.png',
+
+    },
+    {
+      heading: 'رسم الخرائط الجغرافية ',
+      name: "خدمة مقدمة من قسم النظم الجغرافية ",
+      imgSrc: '/images/courses/coursethree.png',
+
+    },
+  ]
+
+
+export const depart: {
+  heading: string;
+  imgSrc: string;
+  name: string;
+
+}[] = [
+    {
+      heading: 'قسم نظم المعلومات  ',
+      name: "يتولى القسم تنفيذ خطة المديرية في مجال مكننة الأعمال الإدارية والمالية واللوجستية وبناء التطبيقات والأنظمة وفقاً لأساليب علمية قياسيةوتشغيل وإدارة التطبيقات وقواعد البيانات وبناء الخدمات الالكترونية وتقديمها إلى الجهات المستفيدة",
+      imgSrc: '/images/courses/courseone.png',
+      
+    },
+    {
+      heading:'قسم صيانة الحاسبات والاجهزة الملحقة',
+      name: "خدمة مقدمة من قسم صيانة الحاسبات ",
+      imgSrc: '/images/courses/coursetwo.png',
+
+    },
+    {
+      heading: 'خدمة شهادات التشفير SSL',
+      name: "خدمة مقدمة من قسم الحكومة الالكترونية ",
+      imgSrc: '/images/courses/coursethree.png',
+
+    },
+    {
+      heading: 'تخصيص اسماء نطاقات رئيسية وفرعية ',
       name: "خدمة مقدمة من قسم لحكومة الالكترونية ",
       imgSrc: '/images/courses/courseone.png',
 

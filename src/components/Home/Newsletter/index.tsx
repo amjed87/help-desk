@@ -1,36 +1,117 @@
-import { getImagePrefix } from "@/utils/util";
+"use client";
+import React, { useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
 import Image from "next/image";
+import { Icon } from "@iconify/react";
+import { courseData } from "@/app/api/data";
+import { getImagePrefix } from "@/utils/util";
 
-const Newsletter = () => {
-    const isProd = process.env.NODE_ENV === "production";
+const Courses = () => {
+  const sliderRef = useRef<Slider | null>(null);
 
-    return (
-        <section>
-            <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4">
-                <div className="grid grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-12 xl:gap-x-8">
-                    <div className={`col-span-12 ${isProd ? 'bg-newsletter-bg-2' : 'bg-newsletter-bg'} bg-contain bg-no-repeat`}>
-                        <div className="mb-10 mt-24 lg:mx-64 lg:my-24">
-                            <h3 className="text-4xl md:text-5xl text-center font-semibold text-white mb-3">Newsletter.</h3>
-                            <h3 className="text-base font-normal text-white/75 text-center mb-8">
-                                Subscrible our newsletter for discounts, <br /> promo and many more.
-                            </h3>
-                            <div>
-                                <div className="relative text-white focus-within:text-white flex flex-row-reverse rounded-full pt-5 lg:pt-0">
-                                    <input type="Email address" name="q" className="py-6 lg:py-8 text-sm md:text-lg w-full mx-3 text-black rounded-full pl-8 focus:outline-none focus:text-black" placeholder="Enter your email address" autoComplete="off" />
-                                    <div className="absolute inset-y-0 right-0 flex items-center pr-6 pt-5 lg:pt-0">
-                                        <button type="submit" className="p-3 lg:p-5 focus:outline-none focus:shadow-outline bg-ultramarine hover:bg-midnightblue duration-150 ease-in-out rounded-full">
-                                            <Image src={`${getImagePrefix()}images/newsletter/send.svg`} alt="send-icon" width={30} height={30} />
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    arrows: false,
+    autoplay: true,
+    speed: 500,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+    ],
+  };
 
+  return (
+    <section id="courses" dir="rtl" lang="ar">
+      <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4">
+        <div className="sm:flex justify-between items-center mb-20">
+          <h2 className="text-midnight_text text-4xl lg:text-5xl font-semibold mb-5 sm:mb-0">
+            اقسام المديرية .
+          </h2>
+          <Link
+            href={"/"}
+            className="text-primary text-lg font-medium hover:tracking-widest duration-500"
+          >
+            اطلع على كل الاقسام&nbsp;&gt;&nbsp;
+          </Link>
+        </div>
+
+        {/* ✅ سلايدر + الأزرار الجانبية */}
+        <div className="relative">
+          {/* زر التالي */}
+          <button
+            onClick={() => sliderRef.current?.slickNext()}
+            className="absolute top-1/2 -translate-y-1/2 left-2 z-10 bg-white border border-gray-300 hover:bg-primary hover:text-white p-3 rounded-full shadow transition"
+            aria-label="التالي"
+          >
+            <Icon icon="ic:round-arrow-forward" className="text-xl" />
+          </button>
+
+          {/* زر السابق */}
+          <button
+            onClick={() => sliderRef.current?.slickPrev()}
+            className="absolute top-1/2 -translate-y-1/2 right-2 z-10 bg-white border border-gray-300 hover:bg-primary hover:text-white p-3 rounded-full shadow transition"
+            aria-label="السابق"
+          >
+            <Icon icon="ic:round-arrow-back" className="text-xl" />
+          </button>
+
+          <Slider {...settings} ref={sliderRef}>
+            {courseData.map((items, i) => (
+              <div key={i}>
+                <div className="bg-white m-3 mb-12 px-3 pt-3 pb-6 shadow-course-shadow rounded-2xl min-h-[480px] lg:min-h-[520px] flex flex-col justify-between">
+                  {/* ✅ الصورة */}
+                  <div className="relative rounded-3xl overflow-hidden">
+                    <Image
+                      src={`${items.imgSrc}`}
+                      alt="course-image"
+                      width={389}
+                      height={200}
+                      className="object-cover w-full h-[200px]"
+                    />
+                  </div>
+
+                  {/* ✅ المحتوى */}
+                  <div className="px-3 pt-4 flex flex-col justify-between flex-1">
+                    <Link
+                      href="#"
+                      className="text-2xl font-bold text-black line-clamp-2 leading-snug mt-2"
+                    >
+                      {items.heading}
+                    </Link>
+
+                    <h3 className="text-base font-normal text-black/75 mt-6 line-clamp-2 leading-relaxed">
+                      {items.name}
+                    </h3>
+                  </div>
                 </div>
-            </div>
-        </section>
-    )
-}
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default Newsletter;
+export default Courses;

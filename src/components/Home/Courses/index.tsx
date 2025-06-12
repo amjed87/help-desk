@@ -46,13 +46,12 @@ const Courses = () => {
       <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4">
         <div className="sm:flex justify-between items-center mb-20">
           <h2 className="text-midnight_text text-4xl lg:text-5xl font-semibold mb-5 sm:mb-0">
-            اقسام المديرية وخدماتها.
-          </h2>
+              الخدمات    </h2>
           <Link
             href={"/"}
             className="text-primary text-lg font-medium hover:tracking-widest duration-500"
           >
-            اطلع على كل الاقسام&nbsp;&gt;&nbsp;
+            اطلع على كل الخدمات&nbsp;&gt;&nbsp;
           </Link>
         </div>
 
