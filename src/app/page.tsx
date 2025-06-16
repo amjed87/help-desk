@@ -7,18 +7,18 @@ import Testimonial from "@/components/Home/Testimonials";
 import Newsletter from "@/components/Home/Newsletter";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "eLearning",
+  title: "منصة الدعم الفني لمديرية ",
 };
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <Companies />
       <Courses />
+      <Newsletter />
+      <Companies />
       <Mentor />
       <Testimonial />
-      <Newsletter />
     </main>
   );
 }
