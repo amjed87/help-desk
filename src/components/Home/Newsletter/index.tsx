@@ -6,10 +6,10 @@ import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
-import { courseData } from "@/app/api/data";
+import { depart } from "@/app/api/data";
 import { getImagePrefix } from "@/utils/util";
 
-const Courses = () => {
+const Departs = () => {
   const sliderRef = useRef<Slider | null>(null);
 
   const settings = {
@@ -42,14 +42,14 @@ const Courses = () => {
   };
 
   return (
-    <section id="courses" dir="rtl" lang="ar">
+    <section id="depart" dir="rtl" lang="ar">
       <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4">
         <div className="sm:flex justify-between items-center mb-20">
           <h2 className="text-midnight_text text-4xl lg:text-5xl font-semibold mb-5 sm:mb-0">
             اقسام المديرية .
           </h2>
           <Link
-            href={"/"}
+            href={"/depart"}
             className="text-primary text-lg font-medium hover:tracking-widest duration-500"
           >
             اطلع على كل الاقسام&nbsp;&gt;&nbsp;
@@ -77,7 +77,7 @@ const Courses = () => {
           </button>
 
           <Slider {...settings} ref={sliderRef}>
-            {courseData.map((items, i) => (
+            {depart.map((items, i) => (
               <div key={i}>
                 <div className="bg-white m-3 mb-12 px-3 pt-3 pb-6 shadow-course-shadow rounded-2xl min-h-[480px] lg:min-h-[520px] flex flex-col justify-between">
                   {/* ✅ الصورة */}
@@ -100,7 +100,7 @@ const Courses = () => {
                       {items.heading}
                     </Link>
 
-                    <h3 className="text-base font-normal text-black/75 mt-6 line-clamp-2 leading-relaxed">
+                    <h3 className="text-base font-normal text-black/75 mt-6 line-clamp-4 leading-relaxed">
                       {items.name}
                     </h3>
                   </div>
@@ -114,4 +114,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default Departs;

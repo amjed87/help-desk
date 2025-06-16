@@ -5,6 +5,6 @@ export const headerData: HeaderItem[] = [
   { label: "الخدمات", href: "/#courses" },
   { label: "عن المديرية ", href: "/#mentor" },
   { label: "مكتبة البرامج ", href: "/#portfolio" },
-  { label: "اقسام المديرية", href: "/#testimonial" },
+  { label: "اقسام المديرية", href: "/#depart" },
   { label: "Docs", href: "/documentation" },
 ];

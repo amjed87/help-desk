@@ -48,7 +48,7 @@ const Courses = () => {
           <h2 className="text-midnight_text text-4xl lg:text-5xl font-semibold mb-5 sm:mb-0">
               الخدمات    </h2>
           <Link
-            href={"/"}
+            href={"/services"}
             className="text-primary text-lg font-medium hover:tracking-widest duration-500"
           >
             اطلع على كل الخدمات&nbsp;&gt;&nbsp;
@@ -99,7 +99,7 @@ const Courses = () => {
                       {items.heading}
                     </Link>
 
-                    <h3 className="text-base font-normal text-black/75 mt-6 line-clamp-2 leading-relaxed">
+                    <h3 className="text-base font-normal text-black/75 mt-6 line-clamp-4 leading-relaxed">
                       {items.name}
                     </h3>
                   </div>
