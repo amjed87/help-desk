@@ -14,9 +14,9 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <Newsletter />
       <Courses />
       <Companies />
-      <Newsletter />
       <Mentor />
       <Testimonial />
     </main>
