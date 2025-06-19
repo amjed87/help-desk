@@ -39,6 +39,18 @@ export const TruestedCompanies: { imgSrc: string }[] = [
   }
 ]
 
+export const about: {
+  heading: string;
+  imgSrc: string;
+  name: string;
+
+}[] = [
+    {
+      heading: 'قسم نظم المعلومات  ',
+      name: "يتولى القسم تنفيذ خطة المديرية في مجال مكننة الأعمال الإدارية والمالية واللوجستية وبناء التطبيقات والأنظمة وفقاً لأساليب علمية قياسيةوتشغيل وإدارة التطبيقات وقواعد البيانات وبناء الخدمات الالكترونية وتقديمها إلى الجهات المستفيدة",
+      imgSrc: '/images/courses/courseone.png',
+      
+    }]
 export const courseData: {
   heading: string;
   imgSrc: string;
@@ -70,8 +82,8 @@ export const courseData: {
 
     },
     {
-      heading: 'بناء الانظمة والبرامج ',
-      name: "خدمة مقدمة من قسم النظم المعلوماتية ",
+      heading: 'تصميم وتطوير الأنظمة والبرامج الإلكترونية',
+      name: "خدمة مقدمة <من قسم النظم المعلوماتية " ,
       imgSrc: '/images/courses/coursetwo.png',
 
     },

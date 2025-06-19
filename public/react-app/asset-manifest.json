@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-app/static/css/main.9d259b9a.css",
+    "main.js": "/react-app/static/js/main.e9dd04f8.js",
+    "static/js/685.b21c83b7.chunk.js": "/react-app/static/js/685.b21c83b7.chunk.js",
+    "static/media/Cairo-Regular.ttf": "/react-app/static/media/Cairo-Regular.318c781c17841e4a9f45.ttf",
+    "index.html": "/react-app/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.9d259b9a.css",
+    "static/js/main.e9dd04f8.js"
+  ]
+}
