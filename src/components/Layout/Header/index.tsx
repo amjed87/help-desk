@@ -86,7 +86,7 @@ const Header: React.FC = () => {
           </nav>
           <div className="flex items-center gap-4">
             <Link
-              href="/react-app/login.jsx"
+              href="/react-app/index.html"
               className="hidden lg:block bg-primary text-white hover:bg-primary/15 hover:text-primary px-16 py-5 rounded-full text-lg font-medium"
              
             >
