@@ -1,116 +1,113 @@
 "use client";
-import React, { useRef } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Link from "next/link";
+
+import React, { useState } from "react";
 import Image from "next/image";
-import { Icon } from "@iconify/react";
-import { courseData } from "@/app/api/data";
-import { getImagePrefix } from "@/utils/util";
+import Link from "next/link";
+import { eGov, giS, mtS, sysInfo } from "@/app/api/data";
 
-const Courses = () => {
-  const sliderRef = useRef<Slider | null>(null);
+const ServicesPage = () => {
+  const [selectedService, setSelectedService] = useState<null | typeof eGov[0]>(null);
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 2,
-    arrows: false,
-    autoplay: true,
-    speed: 500,
-    cssEase: "linear",
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-    ],
-  };
+  const sections = [
+    { title: "خدمات قسم الحكومة الإلكترونية", data: eGov },
+    { title: "خدمات قسم النظم الجغرافية", data: giS },
+    { title: "خدمات قسم النظم المعلوماتية", data: sysInfo },
+    { title: "خدمات قسم صيانة الحاسبات والأجهزة الملحقة", data: mtS },
+  ];
 
   return (
-    <section id="courses" dir="rtl" lang="ar">
-      <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4">
-        <div className="sm:flex justify-between items-center mb-20">
-          <h2 className="text-midnight_text text-4xl lg:text-5xl font-semibold mb-5 sm:mb-0">
-              الخدمات    </h2>
-          <Link
-            href={"/services"}
-            className="text-primary text-lg font-medium hover:tracking-widest duration-500"
-          >
-            اطلع على كل الخدمات&nbsp;&gt;&nbsp;
-          </Link>
-        </div>
+    <main dir="rtl" lang="ar" className="bg-white ">
+      <section className="container mx-auto max-w-screen-xl px-4 pb-20" id="courses">
+        {/* ✅ العنوان الرئيسي */}
+        <h1 className="text-4xl lg:text-5xl font-bold text-center text-midnight_text mb-16 leading-relaxed">
+          تسعى مديرية الاتصالات والنظم المعلوماتية لتقديم أفضل الخدمات وفق أفضل المعايير العالمية
+        </h1>
 
-        {/* ✅ سلايدر + الأزرار الجانبية */}
-        <div className="relative">
-          {/* زر التالي */}
-          <button
-            onClick={() => sliderRef.current?.slickNext()}
-            className="absolute top-1/2 -translate-y-1/2 left-2 z-10 bg-white border border-gray-300 hover:bg-primary hover:text-white p-3 rounded-full shadow transition"
-            aria-label="التالي"
-          >
-            <Icon icon="ic:round-arrow-forward" className="text-xl" />
-          </button>
+        {/* ✅ عرض الأقسام */}
+        {sections.map((section, idx) => (
+          <div key={idx} className="mb-20">
+            {/* ✅ عنوان القسم */}
+            <h2 className="text-2xl font-bold text-black mb-8 text-right">{section.title}</h2>
 
-          {/* زر السابق */}
-          <button
-            onClick={() => sliderRef.current?.slickPrev()}
-            className="absolute top-1/2 -translate-y-1/2 right-2 z-10 bg-white border border-gray-300 hover:bg-primary hover:text-white p-3 rounded-full shadow transition"
-            aria-label="السابق"
-          >
-            <Icon icon="ic:round-arrow-back" className="text-xl" />
-          </button>
+            {/* ✅ الخط الفاصل */}
+            <hr className="mb-10 border-t-2 border-primary w-full" />
 
-          <Slider {...settings} ref={sliderRef}>
-            {courseData.map((items, i) => (
-              <div key={i}>
-                <div className="bg-white m-3 mb-12 px-3 pt-3 pb-6 shadow-course-shadow rounded-2xl min-h-[480px] lg:min-h-[520px] flex flex-col justify-between">
-                  {/* ✅ الصورة */}
-                  <div className="relative rounded-3xl overflow-hidden">
-                    <Image
-                      src={`${items.imgSrc}`}
-                      alt="course-image"
-                      width={389}
-                      height={200}
-                      className="object-cover w-full h-[200px]"
-                    />
-                  </div>
-
-                  {/* ✅ المحتوى */}
-                  <div className="px-3 pt-4 flex flex-col justify-between flex-1">
-                    <Link
-                      href="#"
-                      className="text-2xl font-bold text-black line-clamp-2 leading-snug mt-2"
+            {/* ✅ البطاقات */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {section.data.map((item, i) => (
+                <div key={i} className="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition flex flex-col">
+                  <Image
+                    src={item.imgSrc}
+                    alt={item.heading}
+                    width={400}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="px-4 pt-4 flex flex-col justify-between flex-1 pb-6">
+                    <button
+                      onClick={() => setSelectedService(item)}
+                      className="text-2xl font-bold text-black line-clamp-2 leading-snug mt-2 text-right hover:text-primary"
                     >
-                      {items.heading}
-                    </Link>
-
-                    <h3 className="text-base font-normal text-black/75 mt-6 line-clamp-4 leading-relaxed">
-                      {items.name}
-                    </h3>
+                      {item.heading}
+                    </button>
+                    <p className="text-base font-normal text-black/75 mt-4 line-clamp-4 leading-relaxed text-right">
+                      {item.name}
+                    </p>
+                    {/* ✅ زر اطلب الخدمة الآن */}
+                    <div className="mt-6 text-left">
+                      <Link
+                        href="/react-app/login"
+                        className="inline-block bg-primary text-white hover:bg-primary/80 px-6 py-2 rounded-full text-sm font-semibold transition"
+                      >
+                        اطلب الخدمة الآن
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* ✅ النافذة المنبثقة */}
+      {selectedService && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl max-w-lg w-full p-6 relative shadow-lg">
+            <button
+              onClick={() => setSelectedService(null)}
+              className="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-xl"
+              aria-label="إغلاق"
+            >
+              &times;
+            </button>
+
+            <h2 className="text-2xl font-bold text-primary mb-4">{selectedService.heading}</h2>
+            <Image
+              src={selectedService.imgSrc}
+              alt={selectedService.heading}
+              width={500}
+              height={250}
+              className="w-full h-48 object-cover rounded"
+            />
+            <p className="mt-4 text-gray-800 leading-relaxed text-justify">
+              {selectedService.name}
+            </p>
+
+            {/* ✅ زر اطلب الخدمة الآن داخل الـ Popup */}
+            <div className="mt-6 text-center">
+              <Link
+                href="/react-app/login"
+                className="inline-block bg-primary text-white hover:bg-primary/80 px-8 py-3 rounded-full text-base font-semibold transition"
+              >
+                اطلب الخدمة الآن
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      )}
+    </main>
   );
 };
 
-export default Courses;
+export default ServicesPage;

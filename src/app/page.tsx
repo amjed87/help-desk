@@ -5,6 +5,7 @@ import Courses from "@/components/Home/Courses";
 import Mentor from "@/components/Home/Mentor";
 import Testimonial from "@/components/Home/Testimonials";
 import Newsletter from "@/components/Home/Newsletter";
+import Diracter from "@/components/Home/Diracter";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "منصة الدعم الفني لمديرية ",
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <Diracter/>
       <Newsletter />
       <Courses />
       <Companies />
