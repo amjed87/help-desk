@@ -20,7 +20,7 @@ const DirectorMessage = () => {
           {/* ✅ النص */}
           <div className="flex-1 text-right">
             <h2 className="text-2xl font-bold text-black mb-4">{director.heading}</h2>
-            <p className="text-gray-800 leading-relaxed text-justify">{director.name}</p>
+            <p className="text-2xl text-black mb-4 text-justify">{director.name}</p>
           </div>
 
           {/* ✅ الصورة */}
@@ -28,8 +28,8 @@ const DirectorMessage = () => {
             <Image
               src={director.imgSrc}
               alt={director.heading}
-              width={600}
-              height={600}
+              width={400}
+              height={300}
               className="rounded-lg object-cover"
             />
           </div>

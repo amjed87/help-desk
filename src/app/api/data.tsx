@@ -187,7 +187,30 @@ export const aboutAS: {
       imgSrc:'/images/dir/zyad.jpg',
       
     }]
+export const aboutdir: {
+  heading: string;
+  imgSrc: string;
+  name: string;
+  sec1: string;
+  sec2: string;
+  sec3: string;
+  sec4: string;
+  sec5: string;
+  sec6: string;
 
+}[] = [
+    {
+      heading: 'عن مديرية النظم المعلوماتية',
+      name: " تتولى المديرية رسم السياسات ووضع الخطط اللازمة لأداء عمل تكنولوجيا المعلومات في الوزارة وتقديم الخدمات الالكترونية وإعداد البرامج لجميع التشكيلات وأتمتة أعمالها وتطبيق سياسة امن البيانات والمعلومات  ودعم ومساندة الجهد الأمني ومكافحة الإرهاب ويرتبط بالمديرية الأقسام الاتية",
+      imgSrc:'/images/dir/thamer.jpg',
+      sec1:"قسم نظم المعلومات ",
+      sec2:"قسم نظم المعلومات الجغرافية",
+      sec3:"قسم الحكومة الالكترونية ",
+      sec4:"قسم تناقل المعلومات",
+      sec5:"قسم صيانة الحاسبات والاجهزة الملحقة ",
+      sec6:"قسم الذكاء الاصطناعي",
+      
+    }]
 export const eGov: {
   heading: string;
   imgSrc: string;
@@ -421,47 +444,47 @@ export const MentorData: { profession: string; name: string; imgSrc: string }[] 
   },
 ]
 
-export const TestimonialData: { profession: string; comment: string; imgSrc: string; name: string; rating: number; }[] = [
+export const TestimonialData: { profession: string; comment: string; imgSrc: string; name: string; }[] = [
   {
-    name: "Robert Fox",
-    profession: 'CEO, Parkview Int.Ltd',
-    comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
-    imgSrc: '/images/testimonial/user.svg',
-    rating: 5
+    name: "العقيد الدكتور اركان محمد راضي",
+    profession: 'مدير قسم الحكومة الالكترونية',
+    comment: 'يقوم القسم بتنفيذ مكننة الأعمال الإدارية والمالية من خلال هندسة الإجراءات لتوفير الخدمات الالكترونية لتشكيلات الوزارة والتنسيق مع جهات خارجية أخرى كتوفير الخدمات الالكترونية ذات الصلة بحياة المواطن أو مؤسسات وخلق المنافذ الالكترونية Portal   التي يتم من خلالها توفير الخدمات الالكترونية والوصول إليها من خلال الشبكة الدولية (الانترنت ) بعد توحيد عناوين الدوائر ضمن المواقع الالكترونية للوزارة في نطاق واحد Main domain   ويتم ذلك بفتح قنوات التنسيق والاتصال مع الأقسام والدوائر المرتبطة بالوزارة وخصوصا في مجال الشبكات والاتصالات وبناء الأنظمة وتطويرها بالتعاون والتنسيق مع وزارات الدولة ذات العلاقة والصلة ووضع الخطط والمناهج التدريبية التي من شانها الارتقاء بواقع الأنظمة الشاملة بالشكل الذي يسهل من تكاملها مع بقية الخدمات الالكترونية التي توفرها بقية الوزارات في طريق تنفيذ مشروع الحكومة الالكترونية. ',
+    imgSrc: '/images/dir/egov3.png',
+    
   },
   {
-    name: "Leslie Alexander",
-    profession: 'CEO, Parkview Int.Ltd',
-    comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
-    imgSrc: '/images/mentor/user2.png',
-    rating: 5
+    name: "العقيد حسنين حكمة خضير",
+    profession: 'مدير قسم النظم الجغرافية',
+    comment: 'قسم نظم معلومات جغرافية هو من الأقسام الحيوية في مديرية الاتصالات والنظم المعلوماتية اذ يقع على عاتقه تلبية متطلبات تشكيلات وزارة الداخلية في ما يخص خدمات نظم المعلومات الجغرافية (GIS) من خرائط الكترونية وورقية والاحصائيات للبيانات المكانية ورسم حدود قواطع المسؤولية وتثبيت البيانات المكانية على الصور الفضائية واخراج إحصائيات والتدريب على الاستخدام الأمثل لبرامجيات نظم المعلومات الجغرافية، وخدمة تتبع المركبات (GPS) من خلال امتلاك المنصة المركزية لتتبع عجلات وزارة الداخلية وهي من المنظومات العاملة في القسم وتم توسعت العمل بها والتي ستضم (10.000) جهاز تتبع مثبت على دوريات الشرطة وموزعة على ما يقارب (٢٥) غرفة عمليات موصلة بخدمة تتبع المركبات في بغداد وباقي المحافظات حيث توفر خدمة تتبع الدوريات، وشكل انتشارها، وتوجيه الدوريات لمواقع الحوادث ومراقبة حركة اسطول العجلات الخاصة بكل غرفة عمليات وحفظ خطوط المسار للدوريات، إضافة إلى إصدار التقارير لكل دورية مرتبطة بالنظام ومن ثم وايصال خدمة تتبع المركبات الى دائرة عمليات الوزارة 911 ويعمل القسم على برمجة أجهزة التتبع قبل الشروع بنصبها وتفعيلها داخل عجلات الدوريات بصورة مؤمنة. ويهدف القسم الى ضمان استمرارية تلك الخدمات.',
+    imgSrc: '/images/dir/gis3.png',
+    
   },
   {
-    name: "Cody Fisher",
-    profession: 'CEO, Parkview Int.Ltd',
-    comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
+    name: "العقيد صفاء محمد جياد",
+    profession: 'مدير قسم تناقل المعلومات',
+    comment: 'يتولى القسم تنفيذ المهام الأساسية للمديرية المتعلقة بتناقل المعلومات وبناء البنى التحتية لشبكات الاتصال الداخلية والخارجية وشبكات القيادة والسيطرة لتأمين التناقل الآمن لتطبيقات وقواعد البيانات المنفذة في الوزارة ، والقيام بالدور التنسيقي لتأمين خدمة وصيانة الشبكة الدولية (الانترنيت)وخدمات الشبكة المحلية المغلقة (الانترانيت ) وفق السياقات وطبقاً لصلاحيات مستخدمي الشبكة ، إضافة للتنسيق مع الجهات المسؤولة عن أمنية البيانات للسيطرة على المواقع المحظورة وغير المرغوب بها عن الخادم ، ووضع السياسة التدريبية اللازمة للكوادر العاملة في مجال تناقل المعلومات.',
     imgSrc: '/images/mentor/user3.png',
-    rating: 5
+   
   },
   {
-    name: "Robert Fox",
-    profession: 'CEO, Parkview Int.Ltd',
-    comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
-    imgSrc: '/images/mentor/user1.png',
-    rating: 5
+    name: "رئيس مبرمجين محمد عبد الواحد جبر",
+    profession: 'مدير قسم النظم المعلومات',
+    comment: 'يتولى القسم تنفيذ عمليات تحليل الأنظمة اللازمة للنهوض بالأعمال الإدارية والمالية واللوجستية والأعمال التخصصية لمختلف تشكيلات الوزارة وكتابة برمجياتها وتنفيذها وتشغيلها واختبارها وتوثيقها، وتتولى عمليات تشغيل وإدارة التطبيقات وقواعد البيانات واختيار المناهج التدريبية التخصصية اللازمة لرفع المهارات والخبرات اللازمة ، إضافة إلى المشاركة الفعالة بلجان وضع وتحديد المواصفات الفنية والتحليل الفني للمشاريع المعلوماتية.',
+    imgSrc: '/images/dir/sys3.png',
+    
   },
   {
-    name: "Leslie Alexander",
-    profession: 'CEO, Parkview Int.Ltd',
-    comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
-    imgSrc: '/images/mentor/user2.png',
-    rating: 5
+    name: "الاستاذ احمد جاسم محمد",
+    profession: 'مدير قسم صيانة الاحاسبات والاجهزة الملحقة',
+    comment: 'ويتولى القسم المهام المتعلقة بتنفيذ السياسة العامة للمديرية في مجال صيانة الحاسبات المكتبية والمحمولة والطابعات والأجهزة الملحقة بها واستهلاك التي لا توجد جدوى اقتصادية فيها وكذلك مناقلة الفائض منها ',
+    imgSrc: '/images/dir/mt3.png',
+    
   },
   {
-    name: "Cody Fisher",
-    profession: 'CEO, Parkview Int.Ltd',
-    comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
-    imgSrc: '/images/mentor/user3.png',
-    rating: 5
+    name: "م.ر. مبرمجين ايهم عقيل ",
+    profession: 'مدير قسم الذكاء الاصطناعي',
+    comment: 'يتولى هذا القسم تطوير وتطبيق تقنيات الذكاء الاصطناعي لتحسين وتعزيز القدرة على تحليل البيانات الضخمة وتطوير الأنظمة الذكية وزيادة كفاءة تقديم الخدمات الأمنية والتقنية والإدارية في وزارة الداخلية، بالإضافة الى المساهمة في اتخاذ القرارات وتقديم الاستشارات وتحقيق الأهداف الامنية بالاعتماد على البيانات والمخرجات المتعلقة بنماذج وانظمة الذكاء الاصطناعي من خلال تطوير حلول تقنية ذكية مبتكرة وتحقيق التنبؤات للوصول الى نتائج أسرع وأكثر دقة.',
+    imgSrc: '/images/dir/ai3.png',
+   
   },
 ]

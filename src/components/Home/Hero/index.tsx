@@ -14,9 +14,9 @@ const Hero = () => {
                                 icon="solar:verified-check-bold"
                                 className="text-success text-xl inline-block me-2"
                             />
-                            <p className='text-success text-sm font-semibold text-center lg:text-start'>منصة لتقديم الخدمات الخاصة بمديرية الاتصالات والنظم المعلوماتية </p>
+                            <h2 className='text-success text-sm font-semibold text-center lg:text-start'>منصة لتقديم الخدمات الخاصة بمديرية الاتصالات والنظم المعلوماتية </h2>
                         </div>
-                        <h1 className='text-midnight_text text-4xl sm:text-5xl font-semibold pt-5 lg:pt-0'>تستطيع الان الاطلاع على كافة خدمات مديرية الاتصالات والنظم المعلوماتية هنا  .</h1>
+                        <h2 className='text-midnight_text text-4xl sm:text-5xl font-semibold pt-5 lg:pt-0'>تستطيع الان الاطلاع على كافة خدمات مديرية الاتصالات والنظم المعلوماتية من  خلال منصة الدعم الفني   .</h2>
                         <h3 className='text-black/70 text-lg pt-5 lg:pt-0'>هذه المنصة موجهة الى مدراء مديريات واقسام وشعب النظم المعوماتية والاتصالات في تشكيلات الوزارة كافة .</h3>
                         
                         <div className='flex items-center justify-between pt-10 lg:pt-4'>

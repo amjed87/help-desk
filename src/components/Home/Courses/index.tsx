@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { eGov, giS, mtS, sysInfo } from "@/app/api/data";
+import { getImagePrefix } from "@/utils/util";
 
 const ServicesPage = () => {
   const [selectedService, setSelectedService] = useState<null | typeof eGov[0]>(null);
@@ -22,7 +23,28 @@ const ServicesPage = () => {
         <h1 className="text-4xl lg:text-5xl font-bold text-center text-midnight_text mb-16 leading-relaxed">
           تسعى مديرية الاتصالات والنظم المعلوماتية لتقديم أفضل الخدمات وفق أفضل المعايير العالمية
         </h1>
-
+        <div className='flex items-center justify-between pt-10 lg:pt-4 mb-8'>
+                            <div className='flex gap-2 '>
+                                <Image src={`${getImagePrefix()}images/banner/check-circle.svg`} alt="check-image" width={30} height={30} className='smallImage' />
+                                <Link href="#">
+                                <p className='text-sm sm:text-lg font-normal text-black'>مكتبة الفيديوهات التعليمية </p>
+                                </Link>
+                            </div>
+                            <div className='flex gap-2'>
+                                <Image src={`${getImagePrefix()}images/banner/check-circle.svg`} alt="check-image" width={30} height={30} className='smallImage' />
+                                <Link href="#">
+                                <p className="text-sm sm:text-lg font-normal text-black"> تحميل البرامج والأنظمة</p>
+                                </Link>
+                            </div>
+                            <div className='flex gap-2'>
+                                <Image src={`${getImagePrefix()}images/banner/check-circle.svg`} alt="check-image" width={30} height={30} className='smallImage' />
+                                <Link href="#">
+                                <h2 >التبليغات</h2>
+                                </Link>
+                            </div>    
+        </div>
+          {/* ✅ الخط الفاصل */}
+         <hr className="mb-10 border-t-2 border-primary w-full" />
         {/* ✅ عرض الأقسام */}
         {sections.map((section, idx) => (
           <div key={idx} className="mb-20">

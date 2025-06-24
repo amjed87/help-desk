@@ -49,7 +49,7 @@ const Testimonial = () => {
             }
         ]
     };
-
+{/*  
     const renderStars = (rating: number) => {
         const fullStars = Math.floor(rating);
         const halfStars = rating % 1 >= 0.5 ? 1 : 0;
@@ -63,27 +63,28 @@ const Testimonial = () => {
             </>
         );
     };
-
+*/}
     return (
-        <section id="testimonial">
+        <section id="testimonial" dir= 'rtl' lang='ar'>
             <div className='container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4'>
                 <Slider {...settings}>
                     {TestimonialData.map((items, i) => (
                         <div key={i}>
                             <div className={`bg-white rounded-2xl m-4 p-5 my-20 relative ${i % 2 ? 'shadow-testimonial-shadow2' : 'shadow-testimonial-shadow1'}`}>
-                                <div className="absolute top-[-45px]">
+                                <div className="absolute top-[-65px]">
                                     <Image src={`${getImagePrefix()}${items.imgSrc}`}
-                                        alt={items.name} width={100} height={100} className="inline-block" />
+                                        alt={items.name} width={150} height={150} className="inline-block" />
                                 </div>
-                                <h4 className='text-base font-normal text-darkgray my-4'>{items.comment}</h4>
+                                <h4 className='text-base font-normal text-darkgray text-justify my-6'>{items.comment}</h4>
                                 <div className="flex justify-between items-center">
                                     <div>
                                         <h3 className='text-lg font-medium text-darkbrown pt-4 pb-2'>{items.name}</h3>
                                         <h3 className='text-sm font-normal text-lightgray pb-2'>{items.profession}</h3>
                                     </div>
+                                    {/** 
                                     <div className="flex">
                                         {renderStars(items.rating)}
-                                    </div>
+                                    </div>*/}
                                 </div>
                             </div>
                         </div>
