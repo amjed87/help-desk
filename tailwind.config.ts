@@ -10,8 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-       fontFamily: {
+      fontFamily: {
         cairo: ['Cairo', 'sans-serif'],
+        times: ['"Times New Roman"', 'Times', 'serif'], // ✅ أضف هذا السطر
       },
       boxShadow: {
         'input-shadow': '0 63px 59px rgba(26,33,188,.1)',
@@ -35,10 +36,9 @@ const config: Config = {
         'newsletter-bg': `url('/images/newsletter/bgFile.png')`,
         'newsletter-bg-2': `url('/E-learning/images/newsletter/bgFile.png')`,
       },
-
     },
   },
-  
-  plugins: [lineClamp], // ✅ أضف هذا السطر هنا
+  plugins: [lineClamp],
 };
+
 export default config;

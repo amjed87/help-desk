@@ -41,7 +41,7 @@ const footer = () => {
               ))}
             </ul>
           </div>
-          <div className="col-span-2">
+     {/**     <div className="col-span-2">
             <h3 className="mb-4 text-2xl font-medium">Other</h3>
             <ul>
               <li className="mb-2 text-black/50 hover:text-primary w-fit">
@@ -70,7 +70,7 @@ const footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */} 
           <div className='col-span-4 md:col-span-4 lg:col-span-4'>
             <div className="flex items-center gap-2">
               <Icon

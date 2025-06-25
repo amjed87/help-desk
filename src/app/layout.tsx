@@ -3,7 +3,6 @@ import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { ThemeProvider } from "next-themes";
 import ScrollToTop from "@/components/ScrollToTop";
-// const font = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export default function RootLayout({
   children,
@@ -12,7 +11,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
-      <body className="font-cairo">
+      <body className="font-times"> {/* ✅ استخدمنا Times بدلاً من Cairo */}
         <ThemeProvider
           attribute="class"
           enableSystem={true}
