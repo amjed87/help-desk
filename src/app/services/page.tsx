@@ -50,7 +50,7 @@ const ServicesPage = () => {
                     >
                       {item.heading}
                     </button>
-                    <p className="text-base font-normal text-black/75 mt-4 line-clamp-4 leading-relaxed text-right">
+                    <p className="text-xl font-normal text-black/75 mt-4 line-clamp-4 leading-relaxed text-right text-justify">
                       {item.name}
                     </p>
                     {/* ✅ زر اطلب الخدمة الآن */}

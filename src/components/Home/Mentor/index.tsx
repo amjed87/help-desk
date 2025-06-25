@@ -1,44 +1,44 @@
-"use client"
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+"use client";
 import React from "react";
 import Image from "next/image";
 import { aboutdir } from "@/app/api/data";
 import { getImagePrefix } from "@/utils/util";
 
 const AboutdirMasg = () => {
-   const director = aboutdir[0];
+  const director = aboutdir[0];
 
-
-    return (
-        <section className="bg-deepSlate" id="mentor" >
-            <div className='container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4 relative'>
-                <div className="flex flex-col lg:flex-row items-center gap-10 bg-white p-8 shadow-lg rounded-xl">
-               <div className="flex-1 text-right">
-                        <h1 className="text-2xl font-bold text-black mb-4">{director.heading}</h1>
-                        <h2 className="text-2xl text-black mb-4 text-justify">{director.name}</h2>
-                        <p className="text-gray-800 leading-relaxed text-justify">{director.sec1}</p>
-                        <p className="text-gray-800 leading-relaxed text-justify">{director.sec2}</p>
-                        <p className="text-gray-800 leading-relaxed text-justify">{director.sec3}</p>
-                        <p className="text-gray-800 leading-relaxed text-justify">{director.sec4}</p>
-                        <p className="text-gray-800 leading-relaxed text-justify">{director.sec5}</p>
-                      </div>
-            
-                      {/* ✅ الصورة */}
-                      <div className="flex-shrink-0">
-                        <Image
-                          src={director.imgSrc}
-                          alt={director.heading}
-                          width={300}
-                          height={250}
-                          className="rounded-lg object-cover"
-                        />
-                      </div>
+  return (
+    <section className="bg-deepSlate py-16" id="mentor">
+      <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
+          
+          {/* ✅ القسم النصي */}
+          <div className="flex-1 text-right">
+            <h2 className="text-3xl font-extrabold text-midnight_text mb-4">{director.heading}</h2>
+            <h3 className="text-xl font-semibold text-darkbrown mb-6 justify-between">{director.name}</h3>
+            <div className="space-y-4 text-lg leading-relaxed text-gray-800">
+              <p>{director.sec1}</p>
+              <p>{director.sec2}</p>
+              <p>{director.sec3}</p>
+              <p>{director.sec4}</p>
+              <p>{director.sec5}</p>
             </div>
           </div>
-        </section>
-    );
-}
 
-export default AboutdirMasg
+          {/* ✅ صورة المدير */}
+          <div className="flex-shrink-0">
+            <Image
+              src={director.imgSrc}
+              alt={director.name}
+              width={280}
+              height={300}
+              //className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutdirMasg;

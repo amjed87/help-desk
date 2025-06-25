@@ -10,10 +10,7 @@ const DirectorMessage = () => {
   return (
     <main dir="rtl" lang="ar" className="bg-white" >
       <section className="container mx-auto max-w-screen-xl px-4" id = "dir">
-        {/* ✅ عنوان الصفحة */}
-        <h1 className="text-4xl lg:text-5xl font-bold text-center text-midnight_text mb-16 leading-relaxed">
-          كلمة المدير العام
-        </h1>
+
 
         {/* ✅ محتوى كلمة المدير */}
         <div className="flex flex-col lg:flex-row items-center gap-10 bg-white p-8 shadow-lg rounded-xl">

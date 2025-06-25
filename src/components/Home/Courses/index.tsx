@@ -17,54 +17,63 @@ const ServicesPage = () => {
   ];
 
   return (
-    <main dir="rtl" lang="ar" className="bg-white ">
+    <main dir="rtl" lang="ar" className="bg-white">
       <section className="container mx-auto max-w-screen-xl px-4 pb-20" id="courses">
         {/* ✅ العنوان الرئيسي */}
         <h1 className="text-4xl lg:text-5xl font-bold text-center text-midnight_text mb-16 leading-relaxed">
           تسعى مديرية الاتصالات والنظم المعلوماتية لتقديم أفضل الخدمات وفق أفضل المعايير العالمية
         </h1>
-        <div className='flex items-center justify-between pt-10 lg:pt-4 mb-8'>
-                            <div className='flex gap-2 '>
-                                <Image src={`${getImagePrefix()}images/banner/check-circle.svg`} alt="check-image" width={30} height={30} className='smallImage' />
-                                <Link href="#">
-                                <p className='text-sm sm:text-lg font-normal text-black'>مكتبة الفيديوهات التعليمية </p>
-                                </Link>
-                            </div>
-                            <div className='flex gap-2'>
-                                <Image src={`${getImagePrefix()}images/banner/check-circle.svg`} alt="check-image" width={30} height={30} className='smallImage' />
-                                <Link href="#">
-                                <p className="text-sm sm:text-lg font-normal text-black"> تحميل البرامج والأنظمة</p>
-                                </Link>
-                            </div>
-                            <div className='flex gap-2'>
-                                <Image src={`${getImagePrefix()}images/banner/check-circle.svg`} alt="check-image" width={30} height={30} className='smallImage' />
-                                <Link href="#">
-                                <h2 >التبليغات</h2>
-                                </Link>
-                            </div>    
+
+        <div className="flex items-center justify-between pt-10 lg:pt-4 mb-8 flex-wrap gap-4">
+          <div className="flex gap-2">
+            <Image src={`${getImagePrefix()}images/banner/check-circle.svg`} alt="check-image" width={30} height={30} />
+            <Link href="#">
+              <p className="text-sm sm:text-lg font-normal text-black">مكتبة الفيديوهات التعليمية</p>
+            </Link>
+          </div>
+          <div className="flex gap-2">
+            <Image src={`${getImagePrefix()}images/banner/check-circle.svg`} alt="check-image" width={30} height={30} />
+            <Link href="#">
+              <p className="text-sm sm:text-lg font-normal text-black">تحميل البرامج والأنظمة</p>
+            </Link>
+          </div>
+          <div className="flex gap-2">
+            <Image src={`${getImagePrefix()}images/banner/check-circle.svg`} alt="check-image" width={30} height={30} />
+            <a href="https://meet.erp.moi/help">
+              <p className="text-sm sm:text-lg font-normal text-black">دعم فني مباشر</p>
+            </a>
+          </div>
+          <div className="flex gap-2">
+            <Image src={`${getImagePrefix()}images/banner/check-circle.svg`} alt="check-image" width={30} height={30} />
+            <Link href="#">
+              <h2>التبليغات</h2>
+            </Link>
+          </div>
         </div>
-          {/* ✅ الخط الفاصل */}
-         <hr className="mb-10 border-t-2 border-primary w-full" />
+
+        <hr className="mb-10 border-t-2 border-primary w-full" />
+
         {/* ✅ عرض الأقسام */}
         {sections.map((section, idx) => (
           <div key={idx} className="mb-20">
-            {/* ✅ عنوان القسم */}
             <h2 className="text-2xl font-bold text-black mb-8 text-right">{section.title}</h2>
-
-            {/* ✅ الخط الفاصل */}
             <hr className="mb-10 border-t-2 border-primary w-full" />
 
-            {/* ✅ البطاقات */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {section.data.map((item, i) => (
                 <div key={i} className="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition flex flex-col">
-                  <Image
+                  
+                  {/* ✅ فيديو يظهر بحجم مناسب داخل البطاقة */}
+                  <video
                     src={item.imgSrc}
-                    alt={item.heading}
-                    width={400}
-                    height={200}
-                    className="w-full h-48 object-cover"
+                    className="w-full aspect-video object-contain"
+                    muted
+                    loop
+                    playsInline
+                    onMouseEnter={(e) => e.currentTarget.play()}
+                    onMouseLeave={(e) => e.currentTarget.pause()}
                   />
+
                   <div className="px-4 pt-4 flex flex-col justify-between flex-1 pb-6">
                     <button
                       onClick={() => setSelectedService(item)}
@@ -72,10 +81,9 @@ const ServicesPage = () => {
                     >
                       {item.heading}
                     </button>
-                    <p className="text-base font-normal text-black/75 mt-4 line-clamp-4 leading-relaxed text-right">
+                    <p className="text-xl font-normal text-black/75 mt-4 line-clamp-4 leading-relaxed text-right text-justify">
                       {item.name}
                     </p>
-                    {/* ✅ زر اطلب الخدمة الآن */}
                     <div className="mt-6 text-left">
                       <Link
                         href="/react-app/login"
@@ -105,18 +113,20 @@ const ServicesPage = () => {
             </button>
 
             <h2 className="text-2xl font-bold text-primary mb-4">{selectedService.heading}</h2>
-            <Image
+
+            <video
               src={selectedService.imgSrc}
-              alt={selectedService.heading}
-              width={500}
-              height={250}
-              className="w-full h-48 object-cover rounded"
+              className="w-full aspect-video object-contain rounded"
+              muted
+              autoPlay
+              loop
+              playsInline
             />
+
             <p className="mt-4 text-gray-800 leading-relaxed text-justify">
               {selectedService.name}
             </p>
 
-            {/* ✅ زر اطلب الخدمة الآن داخل الـ Popup */}
             <div className="mt-6 text-center">
               <Link
                 href="/react-app/login"

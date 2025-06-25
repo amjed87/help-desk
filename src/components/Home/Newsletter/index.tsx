@@ -36,7 +36,7 @@ const ServicesPage = () => {
                 >
                   {service.heading}
                 </button>
-                <p className="text-gray-700 mt-3 text-sm">{service.name}</p>
+                <p className="text-xl font-normal text-black/75 mt-4 line-clamp-4 leading-relaxed text-right text-justify">{service.name}</p>
               </div>
             </div>
           ))}
@@ -63,7 +63,7 @@ const ServicesPage = () => {
               height={250}
               className="w-full h-48 object-cover rounded"
             />
-            <p className="mt-4 text-gray-800 leading-relaxed text-justify">
+            <p className="text-xl font-normal text-black/75 mt-4 line-clamp-4 leading-relaxed text-right text-justify">
               {selectedService.name}
             </p>
           </div>

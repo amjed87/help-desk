@@ -39,7 +39,7 @@ const Testimonial = () => {
                 }`}
               >
                 {/* الصورة */}
-                <div className="absolute top-[-90px]">
+                <div className="absolute top-[-85px]">
                   <Image
                     src={`${getImagePrefix()}${items.imgSrc}`}
                     alt={items.name}
