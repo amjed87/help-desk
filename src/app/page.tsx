@@ -1,26 +1,10 @@
-import React from "react";
-import Hero from "@/components/Home/Hero";
-import Companies from "@/components/Home/Companies";
-import Courses from "@/components/Home/Courses";
-import Mentor from "@/components/Home/Mentor";
-import Testimonial from "@/components/Home/Testimonials";
-import Newsletter from "@/components/Home/Newsletter";
-import Diracter from "@/components/Home/Diracter";
-import { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "منصة الدعم الفني لمديرية ",
+// ✅ page.tsx (Server Component)
+import AnimatedHome from "@/components/Home/AnimatedHome";
+
+export const metadata = {
+  title: "منصة الدعم الفني",
 };
 
 export default function Home() {
-  return (
-    <main>
-      <Hero />
-      <Diracter/>
-      <Mentor />
-      <Newsletter />
-      <Courses />
-      <Companies />
-      <Testimonial />
-    </main>
-  );
+  return <AnimatedHome />;
 }
